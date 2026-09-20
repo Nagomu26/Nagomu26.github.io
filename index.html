@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="np">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Plantillas web en vivo · 10 sitios de tu negocio | Restaurantes y negocios · Reserva online</title>
+<meta name="description" content="10 plantillas web publicadas en GitHub Pages: 5 para restaurantes y 5 para negocios, cada una con reserva/cita online. En vivo: restaurante de lujo, brillante, natural, urbano y clásico + negocio de lujo, brillante, natural, urbano y clásico." />
+<link rel="canonical" href="https://Nagomu26.github.io/" />
+<style>
+:root{
+  --bg:#f7f4ef; --card:#ffffff; --ink:#26201b; --mut:#6f6255; --line:#e6dfd3; --ac:#0a6b5a; --ac2:#487f36;
+  --shadow:0 8px 30px rgba(60,45,25,.10);
+  --r:16px;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1240px;margin:0 auto;padding:34px 20px 70px}
+.top{text-align:center;padding:26px 10px 34px}
+.badge{display:inline-block;border:1px solid var(--line);background:var(--card);border-radius:999px;padding:6px 14px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--ac);margin-bottom:18px}
+h1{font-size:clamp(26px,4.4vw,42px);margin:.1em 0 .45em;line-height:1.12;letter-spacing:-.02em}
+h1 .gr{color:var(--ac2)}
+.lead{max-width:680px;margin:0 auto;color:var(--mut);font-size:16px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:22px;margin-top:34px}
+.card{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow);text-decoration:none;color:inherit;transition:transform .16s ease,box-shadow .16s ease}
+.card:hover{transform:translateY(-4px);box-shadow:0 14px 40px rgba(60,45,25,.16)}
+.thumb{position:relative;aspect-ratio:16/10;overflow:hidden;background:#efe9df}
+.thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s ease}
+.card:hover .thumb img{transform:scale(1.04)}
+.thumb .cat{position:absolute;top:12px;left:12px;z-index:2;background:rgba(20,16,12,.72);color:#fff;font-size:11px;letter-spacing:.08em;text-transform:uppercase;padding:5px 10px;border-radius:999px;backdrop-filter:blur(3px)}
+.badge-live{position:absolute;top:12px;right:12px;z-index:2;background:rgba(9,94,78,.9);color:#fff;font-size:11px;letter-spacing:.06em;padding:5px 10px;border-radius:999px;font-weight:600}
+.card .body{padding:18px 18px 16px;display:flex;flex-direction:column;gap:9px;flex:1}
+.card h3{margin:0;font-size:18px;letter-spacing:-.01em}
+.card p{margin:0;color:var(--mut);font-size:13.5px;flex:1}
+.card .foot{display:flex;align-items:center;gap:6px;color:var(--ac);font-size:13px;font-weight:600}
+.card .foot .arr{transition:transform .16s ease}
+.card:hover .foot .arr{transform:translateX(4px)}
+footer{margin-top:44px;text-align:center;color:var(--mut);font-size:13px;border-top:1px solid var(--line);padding-top:22px}
+footer a{color:var(--ac)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <span class="badge">GitHub Pages · En vivo · 10 plantillas</span>
+    <h1>Plantillas web <span class="gr">de tu negocio</span> · publicadas</h1>
+    <p class="lead">Diez sitios completos, cada uno con reserva/cita online y publicados en su propia URL. Abre la tarjeta para visitar la plantilla en directo.</p>
+  </div>
+  <div class="grid" id="grid"></div>
+  <footer>Hecho con tu marca · <a href="https://github.com/Nagomu26">Nagomu26</a> · 2026 · Reserva tu mesa · Cita online</footer>
+</div>
+<script>
+const sites=[
+  {id:"your-restaurant-luxe",   nombre:"Tu Restaurante · Lujoso",  cat:"· Est. 2026"},
+  {id:"your-restaurant-bright", nombre:"Tu Restaurante · Brillante",cat:"· Est. 2026"},
+  {id:"your-restaurant-nature", nombre:"Tu Restaurante · Natural", cat:"· Est. 2026"},
+  {id:"your-restaurant-urban",  nombre:"Tu Restaurante · Urbano",  cat:"· Est. 2026"},
+  {id:"your-restaurant-vintage",nombre:"Tu Restaurante · Clásico", cat:"· Est. 2026"},
+  {id:"your-place-luxe",   nombre:"Tu Negocio · Lujoso",  cat:"· Est. 2026"},
+  {id:"your-place-bright", nombre:"Tu Negocio · Brillante",cat:"· Est. 2026"},
+  {id:"your-place-nature", nombre:"Tu Negocio · Natural", cat:"· Est. 2026"},
+  {id:"your-place-urban",  nombre:"Tu Negocio · Urbano",  cat:"· Est. 2026"},
+  {id:"your-place-vintage",nombre:"Tu Negocio · Clásico", cat:"· Est. 2026"}
+];
+const g=document.getElementById('grid');
+sites.forEach(s=>{
+  const a=document.createElement('a');
+  a.className='card';
+  a.href='https://Nagomu26.github.io/'+s.id+'/';
+  a.target='_blank'; a.rel='noopener';
+  a.innerHTML=
+    '<div class="thumb"><img src="webp/'+s.id+'.webp" alt="Miniatura de '+s.nombre+'" loading="lazy" />'+
+    '<span class="cat">'+s.nombre+' '+s.cat+'</span>'+
+    '<span class="badge-live">● En vivo</span></div>'+
+    '<div class="body"><h3>'+s.nombre+'</h3>'+
+    '<p>Plantilla publicada en su propia URL con reserva/cita online. Haz clic para abrirla.</p>'+
+    '<div class="foot"><span>Abrir plantilla</span><span class="arr">→</span></div></div>';
+  g.appendChild(a);
+});
+</script>
+</body>
+</html>
